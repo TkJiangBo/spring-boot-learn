@@ -30,6 +30,7 @@ public class UserAspect {
 
     @Before("findUserAll()")
     private void findUserAlldoBefore(JoinPoint point) {
+
         logger.info("记录----查询全部用户");
     }
 

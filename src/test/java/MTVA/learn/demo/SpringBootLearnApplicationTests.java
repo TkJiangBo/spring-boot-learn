@@ -1,7 +1,9 @@
 package MTVA.learn.demo;
 
+import MTVA.Service.ProductService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -9,8 +11,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SpringBootLearnApplicationTests {
 
+    @Autowired
+    ProductService productService;
+
     @Test
-    public void contextLoads() {
+    public void cacheTest() {
+        productService.findByCode("500300000011");
+        productService.findByCode("500300000011");
+        productService.findByCode("500300000011");
     }
 
 }
